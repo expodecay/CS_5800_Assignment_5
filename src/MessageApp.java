@@ -12,9 +12,9 @@ public class MessageApp extends JFrame {
 
     int save_files = 0, current_article = 0;
 
-    public MessageApp(String name){
+    public MessageApp(User user){
         this.setSize(750, 780);
-        this.setTitle(name);
+        this.setTitle(user.getName());
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JPanel panel1 = new JPanel();
