@@ -7,9 +7,9 @@ class ButtonListener implements ActionListener {
     private JButton saveBut, undoBut, redoBut;
     private JTextArea the_Article = new JTextArea(90,40);
 
-    Caretaker caretaker = new Caretaker();
+    ChatHistory caretaker = new ChatHistory();
 
-    Originator originator = new Originator();
+    ChatServer originator = new ChatServer();
 
     int save_files = 0, current_article = 0;
 

@@ -1,4 +1,4 @@
-public class Originator {
+public class ChatServer {
 
     private String article;
 
@@ -8,12 +8,12 @@ public class Originator {
         article = new_article;
     }
 
-    public Memento storeInMemento(){
+    public MessageMemento storeInMemento(){
         System.out.println("From Originator: Saving Memento");
-        return  new Memento(article);
+        return  new MessageMemento(article);
     }
 
-    public String restoreFromMemento(Memento memento){
+    public String restoreFromMemento(MessageMemento memento){
         article = memento.getSavedArticle();
 
         System.out.println("From Originator: Previous Artivle Saved in Memento\n" + "\n");

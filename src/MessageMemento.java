@@ -1,8 +1,8 @@
-public class Memento {
+public class MessageMemento {
 
     private String article;
 
-    public Memento(String article_save){
+    public MessageMemento(String article_save){
         article = article_save;
     }
 

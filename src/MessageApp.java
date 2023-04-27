@@ -2,17 +2,17 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class TestMemento extends JFrame {
+public class MessageApp extends JFrame {
     private JButton saveBut, undoBut, redoBut;
     private JTextArea the_Article = new JTextArea(90,40);
 
-    Caretaker caretaker = new Caretaker();
+    ChatHistory caretaker = new ChatHistory();
 
-    Originator originator = new Originator();
+    ChatServer originator = new ChatServer();
 
     int save_files = 0, current_article = 0;
 
-    public TestMemento(String name){
+    public MessageApp(String name){
         this.setSize(750, 780);
         this.setTitle(name);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

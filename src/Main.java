@@ -1,8 +1,8 @@
 public class Main {
     public static void main(String[] args) {
 
-        new TestMemento("user1");
-        new TestMemento("user2");
+        new MessageApp("user1");
+        new MessageApp("user2");
 
     }
 }
