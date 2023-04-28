@@ -5,7 +5,11 @@ public class User {
         name = current_user;
     }
 
-    public void sendMessage(String message, User recipient){
+    public void sendMessage(Message message, MessageApp recipient){
+        ChatServer originator = new ChatServer();
+        String textInTextArea = message.getMessage_content();
+        originator.set(textInTextArea);
+        recipient.text_area.setText(textInTextArea + "\n");
 
     }
 

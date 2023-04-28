@@ -16,8 +16,18 @@ public class ChatServer {
     public String restoreFromMemento(MessageMemento memento){
         article = memento.getSavedArticle();
 
-        System.out.println("From Originator: Previous Artivle Saved in Memento\n" + "\n");
+        System.out.println("From Originator: Previous Article Saved in Memento\n" + "\n");
 
+        return article;
+    }
+
+
+
+
+
+
+    public String sendMessage(String message){
+        article = message;
         return article;
     }
 }

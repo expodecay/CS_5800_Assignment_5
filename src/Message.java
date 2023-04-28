@@ -1,37 +1,36 @@
-import java.util.ArrayList;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class Message {
 
     private String sender;
-    private ArrayList<String> recipients;
-    private double time_stamp;
+    private User recipient;
+    private String time_stamp;
     private String message_content;
 
-    private void setSender(String current_sender){
-        sender = current_sender;
+    public Message(User user){
+        sender = user.getName();
+        time_stamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());;
     }
 
-    private String getSender(){
+    public String getSender(){
         return sender;
     }
 
-    private void setTime_stamp(double time){
-        time_stamp = time;
-    }
+    public String getTime_stamp(){
 
-    private double getTime_stamp(){
         return time_stamp;
     }
 
-    private void setMessage_content(String content){
+    public void setMessage_content(String content){
         message_content = content;
     }
 
-    private String getMessage_content(){
+    public String getMessage_content(){
         return message_content;
     }
 
-    private void addRecipient(String name){
-        recipients.add(name);
+    public void setRecipients(User name){
+        recipient = name;
     }
 }
