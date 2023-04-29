@@ -10,7 +10,7 @@ public class MessageApp extends JFrame {
     ArrayList<User> recipients;
     Message message;
 
-    ChatHistory history = new ChatHistory();
+    public ChatHistory history = new ChatHistory();
 
     ChatServer originator;
 
@@ -73,8 +73,9 @@ public class MessageApp extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             if(e.getSource() == chatHist){
-                System.out.println("...");
+                System.out.println(".....................");
                 printChatHistory();
+                System.out.println(".....................");
             }else
                 if(e.getSource() == user1But){
                     userSend(0);
@@ -107,10 +108,14 @@ public class MessageApp extends JFrame {
 
     }
 
-    private void userSend(int i){
+    public void userSend(int i){
+        Message newMessage = new Message(message.getSender_object());
+        newMessage.setMessage_content(text_area.getText());
+        history.updateChatHistory(newMessage);
+        recipients.get(i).getMessageApp().history.updateChatHistory(newMessage);
         System.out.println(current_user.getUserName() + " Sending message to " + recipients.get(i).getUserName());
         message.setMessage_content(text_area.getText());
-        originator.sendMessage(message, recipients.get(i));
+        originator.sendMessage(newMessage, recipients.get(i));
     }
 
     public void userSave(){
@@ -155,10 +160,17 @@ public class MessageApp extends JFrame {
 
     public void printChatHistory(){
         System.out.println();
-        System.out.println("History for " + current_user.getUserName());
+
+        /*System.out.println("History for " + current_user.getUserName());
         for(int i=0; i<history.getSize(); i++){
             System.out.println(history.getMemento(i).getSavedArticle());
-        }
+        }*/
+        System.out.println("History for " + current_user.getUserName());
+        history.getMessages();
+    }
+
+    public void printChatHistoryByUser(User user){
+        System.out.println(history.iterator(user).hasNext());
     }
 
 }

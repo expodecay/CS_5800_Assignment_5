@@ -1,7 +1,8 @@
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Iterator;
 
-public class User {
+public class User implements IterableByUser{
     private String name;
     MessageApp app;
     ArrayList<User> blockedUsers;
@@ -48,5 +49,10 @@ public class User {
 
     public void printChatHistory(){
         app.printChatHistory();
+    }
+
+    @Override
+    public Iterator iterator(User userToSearchWith) {
+        return app.history.iterator(userToSearchWith);
     }
 }
