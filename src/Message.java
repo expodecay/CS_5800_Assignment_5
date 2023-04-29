@@ -9,7 +9,7 @@ public class Message {
     private String message_content;
 
     public Message(User user){
-        sender = user.getName();
+        sender = user.getUserName();
         time_stamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());;
     }
 

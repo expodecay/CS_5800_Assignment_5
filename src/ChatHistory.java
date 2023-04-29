@@ -11,4 +11,9 @@ public class ChatHistory {
     public MessageMemento getMemento(int index){
         return saved_articles.get(index);
     }
+
+    public int getSize(){
+        return saved_articles.size();
+    }
+
 }
